@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Patients</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <style>
+            .sidebar{
+                background-color:#4B0082;
+                height:100vh;                ;
+            }
+            .nav-item{
+                cursor:pointer;
+                font-weight:bolder;
+            }
+            .text{
+                color:#4B0082;
+            }
+            .card{
+                border:solid 2px #4B0082;
+                color:#4B0082;
+                cursor:pointer;
+            }
+            textarea{
+                border:solid 2px #4B0082;
+            }
+            select{
+                border:solid 2px #4B0082;
+            }
+            body{
+                color:#4B0082;
+            }
+            .btn{
+                background-color:#4B0082;
+            }
+            a{
+                color:white;
+            }
+            #data_range{
+                color:#4B0082;
+                cursor:pointer; 
+            }
+            #delete{
+                color:#4B0082;
+                cursor:pointer; 
+            }
+            table{
+                color:#4B0082;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="row">
+
+            <!--side bar--->
+            <div class="sidebar col-md-2 nav nav-bar nav-bar-nav ">
+                
+                <div class="">
+                    <div class="p-4 nav-item nav-link text-light d-flex">
+                        <i id="Menu" class="material-icons" style="font-size:30px">menu</i>
+                        <span class='pt-1'>Menu</span>
+                    </div>
+                    <div class="p-4 nav-item nav-link text-light d-flex">
+                        <i id="Menu" class="material-icons" style="font-size:20px">create</i>
+                        <span class=''><a href="/regpatient">Arrivals(New Patients)</a></span>
+                    </div>
+                    <div class="p-4 nav-item nav-link text-light d-flex">
+                        <i id="Menu" class="material-icons" style="font-size:20px">event_note</i>
+                        <span class=''><a href="/appointments">Appointments</a></span>
+                    </div>
+                    <div class="p-4 nav-item nav-link text-light d-flex">
+                        <i id="Menu" class="material-icons" style="font-size:20px">list</i>
+                        <span class=''><a href="/patientsonboard">Patients Onboard</a></span>
+                    </div>
+                    <div class="p-4 nav-item nav-link text-light d-flex">
+                        <i id="Menu" class="material-icons" style="font-size:20px">assignment</i>
+                        <span class=''><a href="/prescribe">Prescribe</a></span>
+                    </div>
+                    <div class="p-4 nav-item nav-link text-light d-flex">
+                        <i id="Menu" class="material-icons" style="font-size:20px">chat</i>
+                        <span class=''><a href="/chatroom">Chat Room</a></span>
+                    </div>
+                    <div class="p-4 nav-item nav-link text-light d-flex">
+                        <i id="Menu" class="material-icons" style="font-size:20px">email</i>
+                        <span class=''><a href="/checkonpatients">Check on Patients</a></span>
+                    </div>
+                </div>
+            </div>
+            <!--end of sidebar-->
+
+            <div class="col-md-10">
+                <!--nav bar-->
+                    <h3 class="text">Patients</h3>
+                <!--end of navbar-->
+                <!--Patients Table-->
+                <div class="container">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th style="color:#4B0082;">Patient</th>
+                                <th style="color:#4B0082;">Illness</th>
+                                <th style="color:#4B0082;">Date Registered</th>
+                                <th style="color:#4B0082;">Delete</th>
+                                <th style="color:#4B0082;">Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {% for patient in patientsonboard %}
+                                <tr>
+                                    <td style="color:#4B0082;">{{ patient.names }}</td>
+                                    <td style="color:#4B0082;">{{ patient.patientssituation }}</td>
+                                    <td style="color:#4B0082;">{{ patient.dateregistered }}</td>
+                                    <td><i id="delete" class="material-icons" style="font-size:30px">delete</i></td>
+                                    <td><i id="data_range" class="material-icons" style="font-size:30px">date_range</i></td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
